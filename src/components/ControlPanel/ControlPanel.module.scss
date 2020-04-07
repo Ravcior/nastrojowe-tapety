@@ -1,0 +1,22 @@
+.controlPanel {
+   min-width: 300px;
+   height: 100%;
+   padding: 75px 0 30px 0;
+
+   @media (min-width: 992px) {
+      border-right: 1px solid #dde;
+   }
+
+   color: #748a9d;
+
+   overflow-y: scroll;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+
+   &::-webkit-scrollbar {
+      display: none;
+   }
+}

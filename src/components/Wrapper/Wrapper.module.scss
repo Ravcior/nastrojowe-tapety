@@ -1,0 +1,11 @@
+.wrapper {
+   width: 100%;
+
+   display: flex;
+   flex-direction: column;
+
+   @media (min-width: 992px) {
+      height: 100vh;
+      flex-direction: row;
+   }
+}

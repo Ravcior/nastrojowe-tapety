@@ -1,0 +1,65 @@
+.wrapper {
+   width: 100%;
+   height: 100vh;
+   padding: 90px 10px 25px 10px;
+
+   overflow-y: scroll;
+
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: flex-start;
+   align-content: flex-start;
+
+   &::-webkit-scrollbar {
+      display: none;
+   }
+
+   .item {
+      width: 100%;
+      padding: 5px;
+      overflow: hidden;
+
+      position: relative;
+
+      @media (min-width: 992px) {
+         width: 33.3%;
+      }
+
+      > img {
+         width: 100%;
+      }
+
+      .button {
+         width: 40px;
+         height: 40px;
+         background: rgba(166, 188, 208, 0.6);
+         border-bottom-left-radius: 8px;
+         cursor: pointer;
+         position: absolute;
+         top: 5px;
+         right: 5px;
+
+         display: flex;
+         justify-content: center;
+         align-items: center;
+
+         > img {
+            width: auto;
+         }
+      }
+   }
+
+   .starterSlogan {
+      width: 100%;
+      height: 30vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .slogan {
+         font-weight: 700;
+         color: #748a9d;
+         margin-bottom: 30px;
+      }
+   }
+}
