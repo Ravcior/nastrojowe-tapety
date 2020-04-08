@@ -47,9 +47,15 @@ class Root extends React.Component {
    };
 
    getImages = (receivedState) => {
+      let arr = [];
+      for (let val in receivedState) {
+         arr.push(receivedState[val]);
+      }
+      arr = arr.join(',');
+      console.log(arr);
       this.setState({ searching: true, imgs: [] });
       fetch(
-         `https://api.unsplash.com/photos/random/?client_id=gaqRhPO6uN9IW1jynLsXF7P1pxk0hTK1ihThu-gwf7M&count=3`
+         `https://api.unsplash.com/photos/random/?client_id=gaqRhPO6uN9IW1jynLsXF7P1pxk0hTK1ihThu-gwf7M&count=3&query=${arr}`
       )
          .then((res) => res.json())
          .then((res) => this.addImages(res))
