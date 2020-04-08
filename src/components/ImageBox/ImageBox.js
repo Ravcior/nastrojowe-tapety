@@ -29,7 +29,7 @@ class ImageBox extends React.Component {
                               key={i}
                               className={styles.img}
                            >
-                              <img src={el} alt="" />
+                              <img src={el[1]} alt="" />
                               <div
                                  className={styles.button}
                                  onClick={() => {

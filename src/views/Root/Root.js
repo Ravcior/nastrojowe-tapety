@@ -35,19 +35,27 @@ class Root extends React.Component {
    };
 
    addImages = (res) => {
-      this.setState((prevState) => ({
-         imgs: [...prevState.imgs, res.url],
-      }));
-      this.setState({ searching: false });
+      console.log(res);
+      let arr = [];
+      res.map((item) =>
+         arr.push([
+            item.id,
+            item.urls.thumb,
+            [item.user.first_name, item.user.last_name],
+         ])
+      );
+      console.log(arr);
+      this.setState({ imgs: arr, searching: false });
    };
 
    getImages = (receivedState) => {
       this.setState({ searching: true, imgs: [] });
-      for (let i in receivedState) {
-         fetch(
-            `https://source.unsplash.com/1280x720/?${receivedState[i]}`
-         ).then((res) => this.addImages(res));
-      }
+      fetch(
+         `https://api.unsplash.com/photos/random/?client_id=gaqRhPO6uN9IW1jynLsXF7P1pxk0hTK1ihThu-gwf7M&count=3`
+      )
+         .then((res) => res.json())
+         .then((res) => this.addImages(res))
+         .catch((error) => console.log(error));
    };
 
    addFavourite = (item) => {
