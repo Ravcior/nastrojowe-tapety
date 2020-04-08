@@ -39,7 +39,7 @@ class Root extends React.Component {
       res.map((item) =>
          arr.push([
             item.id,
-            item.urls.thumb,
+            item.urls.full,
             [item.user.first_name, item.user.last_name],
          ])
       );
