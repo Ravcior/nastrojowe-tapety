@@ -35,7 +35,6 @@ class Root extends React.Component {
    };
 
    addImages = (res) => {
-      console.log(res);
       let arr = [];
       res.map((item) =>
          arr.push([
@@ -44,7 +43,6 @@ class Root extends React.Component {
             [item.user.first_name, item.user.last_name],
          ])
       );
-      console.log(arr);
       this.setState({ imgs: arr, searching: false });
    };
 
@@ -55,7 +53,11 @@ class Root extends React.Component {
       )
          .then((res) => res.json())
          .then((res) => this.addImages(res))
-         .catch((error) => console.log(error));
+         .catch((error) =>
+            alert(
+               'Nie udało sie pobrać zdjęć z serwisu Unsplash'
+            )
+         );
    };
 
    addFavourite = (item) => {
